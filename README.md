@@ -1,2 +1,2 @@
 # AMS
-This is a Administrative Management System.
+This is an Administrative Management System.
