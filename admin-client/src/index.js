@@ -1,16 +1,18 @@
 /*
-入口js
+Entry js
  */
-import React from 'react'
-import ReactDOM from 'react-dom'
-import {Provider} from 'react-redux'
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 
-import store from './redux/store'
-import App from './App'
+//引入自定义模块，一定要先加./
+import store from "./redux/store";
+import App from "./App";
 
 // 将App组件标签渲染到index页面的div上
-ReactDOM.render((
+ReactDOM.render(
   <Provider store={store}>
     <App />
-  </Provider>
-), document.getElementById('root'))
+  </Provider>,
+  document.getElementById("root")
+);
