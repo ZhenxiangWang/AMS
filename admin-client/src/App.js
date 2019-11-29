@@ -10,6 +10,7 @@ root component
 export default class App extends Component {
   render() {
     return (
+      //React组件名，首字母大写。
       <HashRouter>
         <Switch>
           {" "}
