@@ -80,13 +80,13 @@ class Login extends Component {
       <div className="login">
         <header className="login-header">
           <img src={logo} alt="logo" />
-          <h1>React项目: 后台管理系统</h1>
+          <h1>Admin Management System</h1>
         </header>
         <section className="login-content">
           <div className={user.errorMsg ? "error-msg show" : "error-msg"}>
             {user.errorMsg}
           </div>
-          <h2>用户登陆</h2>
+          <h2>User Login</h2>
           <Form onSubmit={this.handleSubmit} className="login-form">
             <Item>
               {/*
@@ -118,7 +118,7 @@ class Login extends Component {
                   prefix={
                     <Icon type="user" style={{ color: "rgba(0,0,0,.25)" }} />
                   }
-                  placeholder="用户名"
+                  placeholder="User Name"
                 />
               )}
             </Item>
@@ -135,7 +135,7 @@ class Login extends Component {
                     <Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />
                   }
                   type="password"
-                  placeholder="密码"
+                  placeholder="Password"
                 />
               )}
             </Form.Item>
@@ -145,7 +145,7 @@ class Login extends Component {
                 htmlType="submit"
                 className="login-form-button"
               >
-                登陆
+                Login
               </Button>
             </Form.Item>
           </Form>
