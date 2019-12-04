@@ -1,15 +1,17 @@
-# day01
-## 1. 项目开发准备
+# This is an Admin Management System.
+
+## day01
+### 1. 项目开发准备
     1). 描述项目
     2). 技术选型 
     3). API接口/接口文档/测试接口
     
-## 2. 启动项目开发
+### 2. 启动项目开发
     1). 使用react脚手架创建项目
     2). 开发环境运行: npm start
     3). 生产环境打包运行: npm run build   serve build
 
-## 3. git管理项目
+### 3. git管理项目
     1). 创建远程仓库
     2). 创建本地仓库
         a. 配置.gitignore
@@ -33,14 +35,14 @@
     7). 如果远程修改
         git pull origin dev
         
-## 4. 创建项目的基本结构
+### 4. 创建项目的基本结构
     api: ajax请求的模块
     components: 非路由组件
     pages: 路由组件
     App.js: 应用的根组件
     index.js: 入口js
     
-## 5 引入antd
+### 5 引入antd
     下载antd的包
     按需打包: 只打包import引入组件的js/css
         下载工具包
@@ -52,7 +54,7 @@
     使用antd的组件
         根据antd的文档编写
         
-## 6. 引入路由
+### 6. 引入路由
     下载包: react-router-dom
     拆分应用路由:
       Login: 登陆
@@ -62,7 +64,7 @@
       <Switch>
       <Route path='' component={}/>
       
-## 7. Login的静态组件
+### 7. Login的静态组件
     1). 自定义了一部分样式布局
     2). 使用antd的组件实现登陆表单界面
       Form  / Form.Item
@@ -70,7 +72,7 @@
       Icon
       Button
 
-## 8. 收集表单数据和表单的前台验证
+### 8. 收集表单数据和表单的前台验证
     1). form对象
         如何让包含<Form>的组件得到form对象?  WrapLoginForm = Form.create()(LoginForm)
         WrapLoginForm是LoginForm的父组件, 它给LoginForm传入form属性
@@ -93,7 +95,7 @@
               if(!error) {通过了验证, 发送ajax请求}
             })
             
-## 9. 高阶函数与高阶组件
+### 9. 高阶函数与高阶组件
     1. 高阶函数
         1). 一类特别的函数
             a. 接受函数类型的参数
@@ -115,15 +117,15 @@
         高阶组件是特别的高阶函数
         接收一个组件函数, 返回是一个新的组件函数
         
-# day02
-## 1. 后台应用
+## day02
+### 1. 后台应用
     启动后台应用: mongodb服务必须启动
     使用postman测试接口(根据接口文档):
         访问测试: post请求的参数在body中设置
         保存测试接口
         导出/导入所有测试接口
         
-## 2. 编写ajax代码
+### 2. 编写ajax代码
     1). ajax请求函数模块: api/ajax.js
         封装axios + Promise
         函数的返回值是promise对象  ===> 后面用上async/await
@@ -159,7 +161,7 @@
         c. 哪里写async?
             await所在函数(最近的)定义的左侧写async
             
-## 3. 实现登陆(包含自动登陆)
+### 3. 实现登陆(包含自动登陆)
     login.jsx
         1). 调用登陆的接口请求
         2). 如果失败, 显示错误提示信息
@@ -179,7 +181,7 @@
     memoryUtils.js
         用来在内存中保存数据(user)的工具类
         
-## 4. 搭建admin的整体界面结构
+### 4. 搭建admin的整体界面结构
     1). 整体布局使用antd的Layout组件
     2). 拆分组件
         LeftNav: 左侧导航
@@ -188,7 +190,7 @@
         定义路由组件
         注册路由
         
-## 5. LeftNav组件
+### 5. LeftNav组件
     1). 使用antd的组件
         Menu / Item / SubMenu
     
@@ -212,9 +214,9 @@
         刷新子菜单路径时, 自动打开子菜单列表?
             openKey是 一级列表项的某个子菜单项是当前对应的菜单项
             
-# day03
+## day03
 
-## 1. Header组件
+### 1. Header组件
     1). 界面静态布局
         三角形效果
     2). 获取登陆用户的名称显示
@@ -236,7 +238,7 @@
         通过...透传所有接收的属性: <Button {...props} />    <LinkButton>xxxx</LinkButton>
         组件标签的所有子节点都会成为组件的children属性
         
-## 2. jsonp解决ajax跨域的原理
+### 2. jsonp解决ajax跨域的原理
     1). jsonp只能解决GET类型的ajax请求跨域问题
     2). jsonp请求不是ajax请求, 而是一般的get请求
     3). 基本原理
@@ -248,32 +250,32 @@
         浏览器端:
             收到响应自动执行函数调用的js代码, 也就执行了提前定义好的回调函数, 并得到了需要的结果数据
            
-# day04: Category组件
+## day04: Category组件
 
-## 1. 使用antd组件构建分类列表界面
+### 1. 使用antd组件构建分类列表界面
     Card
     Table
     Button
     Icon
         
-## 2. 相关接口请求函数
+### 2. 相关接口请求函数
     获取一级/二级分类列表
     添加分类
     更新分类
         
-## 3. 异步显示一级分类列表    
+### 3. 异步显示一级分类列表    
     设计一级分类列表的状态: categorys
     异步获取一级分类列表: componentDidMount(){}
     更新状态, 显示
 
-## 4. 显示二级分类列表
+### 4. 显示二级分类列表
     设计状态: subCategorys / parentId / parentName
     显示二级分类列表: 根据parentId状态值, 异步获取分类列表
     setState()的问题
         setState()更新状态是异步更新的, 直接读取状态值还是旧的状态值
         setState({}, [callback]), 回调函数是在状态更新且界面更新之后执行, 可以在此获取最新的状态
         
-## 5. 更新分类
+### 5. 更新分类
     1). 界面
         antd组件: Modal, Form, Input
         显示/隐藏: showStatus状态为2/0
@@ -284,9 +286,9 @@
         重新获取分类列表
         
         
-# day05
+## day05
 
-## 1. 添加分类
+### 1. 添加分类
     1). 界面
         antd组件: Modal, Form, Select, Input
         显示/隐藏: showStatus状态为1/0
@@ -296,7 +298,7 @@
         调用添加分类的接口
         重新获取分类列表
 
-## 2. Product整体路由
+### 2. Product整体路由
     1). 配置子路由: 
         ProductHome / ProductDetail / ProductAddUpdate
         <Route> / <Switch> / <Redirect>
@@ -305,7 +307,7 @@
         默认: 逐层匹配   <Route path='/product' component={ProductHome}/>
         exact属性: 完全匹配
         
-## 3. 分页实现技术(2种)
+### 3. 分页实现技术(2种)
     1). 前台分页
         请求获取数据: 一次获取所有数据, 翻页时不需要再发请求
         请求接口: 
@@ -321,7 +323,7 @@
     3). 如何选择?
         基本根据数据多少来选择
         
-## 4. ProductHome组件
+### 4. ProductHome组件
     1). 分页显示
        界面: <Card> / <Table> / Select / Icon / Input / Button
        状态: products / total
@@ -354,7 +356,7 @@
     5). 进入添加界面
         history.push('/product/addupdate')
         
-## 5. ProductDetail组件
+### 5. ProductDetail组件
     1). 读取商品数据: this.props.location.state.product
     2). 显示商品信息: <Card> / List 
     3). 异步显示商品所属分类的名称
@@ -365,8 +367,8 @@
         异步得到的是所有promsie的结果的数组
         特点: 一次发多个请求, 只有当所有请求都成功, 才成功, 并得到成功的数据,一旦有一个失败, 整个都失败
 
-# day06
-## 1. ProductAddUpdate
+## day06
+### 1. ProductAddUpdate
     1). 基本界面
         Card / Form / Input / TextArea / Button
         FormItem的label标题和layout
@@ -380,7 +382,7 @@
     
     3). 表单数据收集与表单验证
     
-## 2. PicturesWall
+### 2. PicturesWall
     1). antd组件
         Upload / Modal / Icon
         根据示例DEMO改造编写
@@ -396,14 +398,14 @@
         2. 将ref容器交给需要获取的标签元素: <PicturesWall ref={this.pw} />  // 自动将将标签对象添加为pw对象的current属性
         3. 通过ref容器读取标签元素: this.pw.current
 
-# day07
+## day07
 
-## 1. RichTextEditor
+### 1. RichTextEditor
     1). 使用基于react的富文本编程器插件库: react-draft-wysiwyg
     2). 参考库的DEMO和API文档编写
     3). 如果还有不确定的, 百度搜索, 指定相对准确的关键字
     
-## 2. 完成商品添加与修改功能
+### 2. 完成商品添加与修改功能
     1). 收集输入数据
         通过form收集: name/desc/price/pCategoryId/categoryId
         通过ref收集: imgs/detail
@@ -413,7 +415,7 @@
         定义添加和更新的接口请求函数
         调用接口请求函数, 如果成功并返回商品列表界面
 
-## 3. 角色管理
+### 3. 角色管理
     1). 角色前台分页显示
     2). 添加角色
     3). 给指定角色授权
@@ -424,9 +426,9 @@
                 发请求更新product
         解决默认勾选不正常的bug: 利用组件的componentWillReceiveProps()
 
-# day08
+## day08
 
-## 1. setState()的使用
+### 1. setState()的使用
     1). setState(updater, [callback]),
         updater为返回stateChange对象的函数: (state, props) => stateChange
         接收的state和props被保证为最新的
@@ -439,7 +441,7 @@
             如果新状态依赖于原状态 ===> 使用函数方式
         如果需要在setState()后获取最新的状态数据, 在第二个callback函数中读取
 
-## 2. setState()的异步与同步
+### 2. setState()的异步与同步
     1). setState()更新状态是异步还是同步的?
         a. 执行setState()的位置?
             在react控制的回调函数中: 生命周期勾子 / react事件监听回调
@@ -455,7 +457,7 @@
         b. 如何得到异步更新后的状态数据?
             在setState()的callback回调函数中
 
-## 3. Component与PureComponent
+### 3. Component与PureComponent
     1). Component存在的问题?
         a. 父组件重新render(), 当前组件也会重新执行render(), 即使没有任何变化
         b. 当前组件setState(), 重新执行render(), 即使state没有任何变化
@@ -476,13 +478,13 @@
         PureComponent的原理?
         区别Component与PureComponent?
 
-## 4. 用户管理
+### 4. 用户管理
     1). 显示用户分页列表
     2). 添加用户
     3). 修改用户
     4). 删除用户
     
-## 5. 导航菜单权限控制
+### 5. 导航菜单权限控制
     1). 基本思路(依赖于后台): 
         角色: 包含所拥有权限的所有菜单项key的数组: menus=[key1, key2, key3]
         用户: 包含所属角色的ID: role_id
@@ -494,13 +496,13 @@
         c. 当前用户有此item的权限: key有没有menus中
         d. 如果当前用户有此item的某个子item的权限
 
-# day09
-## 1. redux理解
+## day09
+### 1. redux理解
 	什么?: redux是专门做状态管理的独立第3方库, 不是react插件, 但一般都用在react项目中
 	作用?: 对应用中状态进行集中式的管理(写/读)
 	开发: 与react-redux, redux-thunk等插件配合使用
 
-## 2. redux相关API
+### 2. redux相关API
 	redux中包含: createStore(), applyMiddleware(), combineReducers()
 	store对象: getState(), dispatch(), subscribe()
 	react-redux: 
@@ -512,7 +514,7 @@
 			产生的就是容器组件, 负责向UI组件传递标签属性, 
 			一般属性值从state中获取, 函数属性内部会执行dispatch分发action
 
-## 3. redux核心概念(3个)
+### 3. redux核心概念(3个)
 	action: 
 		默认是对象(同步action), {type: 'xxx', data: value}, 需要通过对应的actionCreator产生, 
 		它的值也可以是函数(异步action), 需要引入redux-thunk才可以
@@ -524,10 +526,10 @@
 		内部管理着: state和reducer
 		提供方法: getState(), dispatch(action), subscribe(listener)
 
-## 4. redux工作流程
+### 4. redux工作流程
 ![](http://www.ruanyifeng.com/blogimg/asset/2016/bg2016091802.jpg)
 		
-## 5. 使用redux及相关库编码
+### 5. 使用redux及相关库编码
 	需要引入的库: 
 		redux
 		react-redux
@@ -542,8 +544,8 @@
 		ui组件(components): 不使用redux相关API
 		容器组件(containers): 通过connect()()生成的组件
 		
-# day10
-## 1. 在项目中搭建redux整套环境
+## day10
+### 1. 在项目中搭建redux整套环境
     1). store.js
     2). reducer.js
     3). actions.js
@@ -551,7 +553,7 @@
     5). index.js
     6). 在需要与redux进行状态数据通信(读/写)的UI组件包装生成容器组件
 
-## 2. 通过redux管理头部标题headTitle数据
+### 2. 通过redux管理头部标题headTitle数据
     1). action-types.js
     2). actoins.js
     3). reducer.js
@@ -559,7 +561,7 @@
         left-nav.js
         header.js
         
-## 3. 通过redux管理登陆用户信息user数据
+### 3. 通过redux管理登陆用户信息user数据
     1). action-types.js
     2). actoin.js
     3). reducer.js
@@ -570,7 +572,7 @@
         header.js
         role.js
 
-## 4. 自定义redux库
+### 4. 自定义redux库
     1). redux库向外暴露下面几个函数
         createStore(): 接收的参数为reducer函数, 返回为store对象
         combineReducers(): 接收包含n个reducer方法的对象, 返回一个新的reducer函数
@@ -585,7 +587,7 @@
         返回的总reducer函数内部会根据总的state和指定的action, 
         调用每个reducer函数得到对应的新的state, 并封装成一个新的总state对象返回
 
-## 5. 自定义react-redux库
+### 5. 自定义react-redux库
     1). react-redux向外暴露了2个API
         a. Provider组件类
         b. connect函数
@@ -607,17 +609,17 @@
             将包含n个dispatch方法的对象分别作为函数属性传入UI组件
         通过store绑定state变化的监听, 在回调函数中根据store中最新的state数据更新容器组件状态, 从而更新UI组件
 
-# day11
-## 1. 数据可视化
+## day11
+### 1. 数据可视化
     1). echarts(百度) ==> echarts-for-react
     2). g2(阿里) ==> bizCharts
     3). d3(国外)
 
-## 2. 前台404界面
+### 2. 前台404界面
     <Redirect from='/' to='/home' exact/>
     <Route component={NotFound}/>
     
-## 3. 打包应用运行
+### 3. 打包应用运行
     1). 解决生产环境ajax跨域问题
         使用nginx的反向代理解决(一般由后台配置)
         CORS: 允许浏览器端跨域
