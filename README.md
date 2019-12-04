@@ -1,6 +1,6 @@
 # This is an Admin Management System.
 
-## day01
+## Day01
 ### 1. 项目开发准备
     1). 描述项目
     2). 技术选型 
@@ -117,7 +117,7 @@
         高阶组件是特别的高阶函数
         接收一个组件函数, 返回是一个新的组件函数
         
-## day02
+## Day02
 ### 1. 后台应用
     启动后台应用: mongodb服务必须启动
     使用postman测试接口(根据接口文档):
@@ -214,7 +214,7 @@
         刷新子菜单路径时, 自动打开子菜单列表?
             openKey是 一级列表项的某个子菜单项是当前对应的菜单项
             
-## day03
+## Day03
 
 ### 1. Header组件
     1). 界面静态布局
@@ -250,7 +250,7 @@
         浏览器端:
             收到响应自动执行函数调用的js代码, 也就执行了提前定义好的回调函数, 并得到了需要的结果数据
            
-## day04: Category组件
+## Day04: Category组件
 
 ### 1. 使用antd组件构建分类列表界面
     Card
@@ -286,7 +286,7 @@
         重新获取分类列表
         
         
-## day05
+## Day05
 
 ### 1. 添加分类
     1). 界面
@@ -367,7 +367,7 @@
         异步得到的是所有promsie的结果的数组
         特点: 一次发多个请求, 只有当所有请求都成功, 才成功, 并得到成功的数据,一旦有一个失败, 整个都失败
 
-## day06
+## Day06
 ### 1. ProductAddUpdate
     1). 基本界面
         Card / Form / Input / TextArea / Button
@@ -398,7 +398,7 @@
         2. 将ref容器交给需要获取的标签元素: <PicturesWall ref={this.pw} />  // 自动将将标签对象添加为pw对象的current属性
         3. 通过ref容器读取标签元素: this.pw.current
 
-## day07
+## Day07
 
 ### 1. RichTextEditor
     1). 使用基于react的富文本编程器插件库: react-draft-wysiwyg
@@ -426,7 +426,7 @@
                 发请求更新product
         解决默认勾选不正常的bug: 利用组件的componentWillReceiveProps()
 
-## day08
+## Day08
 
 ### 1. setState()的使用
     1). setState(updater, [callback]),
@@ -496,7 +496,7 @@
         c. 当前用户有此item的权限: key有没有menus中
         d. 如果当前用户有此item的某个子item的权限
 
-## day09
+## Day09
 ### 1. redux理解
 	什么?: redux是专门做状态管理的独立第3方库, 不是react插件, 但一般都用在react项目中
 	作用?: 对应用中状态进行集中式的管理(写/读)
@@ -544,7 +544,7 @@
 		ui组件(components): 不使用redux相关API
 		容器组件(containers): 通过connect()()生成的组件
 		
-## day10
+## Day10
 ### 1. 在项目中搭建redux整套环境
     1). store.js
     2). reducer.js
@@ -609,7 +609,7 @@
             将包含n个dispatch方法的对象分别作为函数属性传入UI组件
         通过store绑定state变化的监听, 在回调函数中根据store中最新的state数据更新容器组件状态, 从而更新UI组件
 
-## day11
+## Day11
 ### 1. 数据可视化
     1). echarts(百度) ==> echarts-for-react
     2). g2(阿里) ==> bizCharts
