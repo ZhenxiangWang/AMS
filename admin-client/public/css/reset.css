@@ -1,4 +1,5 @@
 /*! minireset.css v0.0.4 | MIT License | github.com/jgthms/minireset.css */
+/* 全局样式 */
 html,
 body,
 p,
@@ -51,7 +52,9 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -83,7 +86,8 @@ th {
   text-align: left;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   width: 100%;
 }
