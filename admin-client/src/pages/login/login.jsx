@@ -3,7 +3,7 @@ import { Redirect } from "react-router-dom";
 import { Form, Icon, Input, Button } from "antd";
 import { connect } from "react-redux";
 
-import "./login.less";
+import "./login.less"; //样式文件
 import logo from "../../assets/images/logo.png";
 import { login } from "../../redux/actions";
 
