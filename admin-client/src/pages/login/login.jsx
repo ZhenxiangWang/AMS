@@ -14,7 +14,7 @@ const Item = Form.Item; // 不能写在import之前
  */
 class Login extends Component {
   handleSubmit = event => {
-    // 阻止事件的默认行为
+    // 阻止事件的默认行为: 组织表单的提交
     event.preventDefault();
 
     // 对所有表单字段进行检验
