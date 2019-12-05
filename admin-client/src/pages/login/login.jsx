@@ -52,13 +52,13 @@ class Login extends Component {
   validatePwd = (rule, value, callback) => {
     console.log("validatePwd()", rule, value);
     if (!value) {
-      callback("密码必须输入");
+      callback("Please input your password!");
     } else if (value.length < 4) {
-      callback("密码长度不能小于4位");
+      callback("Password must be at least 4 characters.");
     } else if (value.length > 12) {
-      callback("密码长度不能大于12位");
+      callback("Password must be at most 12 characters.");
     } else if (!/^[a-zA-Z0-9_]+$/.test(value)) {
-      callback("密码必须是英文、数字或下划线组成");
+      callback("Password must contain only letters, numbers, or underscores.");
     } else {
       callback(); // 验证通过
     }
@@ -103,13 +103,20 @@ class Login extends Component {
                   {
                     required: true,
                     whitespace: true,
-                    message: "用户名必须输入"
+                    message: "Please input your username!"
                   },
-                  { min: 4, message: "用户名至少4位" },
-                  { max: 12, message: "用户名最多12位" },
+                  {
+                    min: 4,
+                    message: "User name must be at least 4 characters."
+                  },
+                  {
+                    max: 12,
+                    message: "User name must be at most 12 characters."
+                  },
                   {
                     pattern: /^[a-zA-Z0-9_]+$/,
-                    message: "用户名必须是英文、数字或下划线组成"
+                    message:
+                      "User name  must contain only letters, numbers, or underscores."
                   }
                 ],
                 initialValue: "admin" // 初始值
