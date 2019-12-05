@@ -86,6 +86,7 @@ th {
   text-align: left;
 }
 
+/* 解决height=0的问题 */
 html,
 body {
   height: 100%;
