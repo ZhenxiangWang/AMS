@@ -16,8 +16,13 @@ const BASE = "";
 export function reqLogin(username, password) {
   return ajax('/login', {username, password}, 'POST')
 }*/
+//  => 有return的作用
 export const reqLogin = (username, password) =>
   ajax(BASE + "/login", { username, password }, "POST");
+//如果非要加大括号，就写成这样
+// export const reqLogin = (username, password) => {
+//   return ajax(BASE + "/login", { username, password }, "POST");
+// };
 
 // 获取一级/二级分类的列表
 export const reqCategorys = parentId =>
