@@ -11,6 +11,7 @@ module.exports = override(
   // 使用less-loader对源码中的less的变量进行重新指定.
   addLessLoader({
     javascriptEnabled: true,
+    //@primary-color是less里的变量名
     modifyVars: { "@primary-color": "#1DA57A" }
   })
 );

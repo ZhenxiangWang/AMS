@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { HashRouter, Route, Switch } from "react-router-dom";
-
+//将组件后缀写成jsx而不是js，为了区分是不是组件
 import Login from "./pages/login/login";
 import Admin from "./pages/admin/admin";
 
@@ -12,6 +12,7 @@ export default class App extends Component {
     return (
       //React组件名，首字母大写.
       //路由器
+      //用BrowserRouter可以去掉井号
       <HashRouter>
         <Switch>
           {" "}

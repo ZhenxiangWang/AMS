@@ -42,12 +42,12 @@ const fs = require("fs");
 mongoose
   .connect("mongodb://localhost/server_db2", { useNewUrlParser: true })
   .then(() => {
-    console.log("连接数据库成功!!!");
+    console.log("Database connect success!");
     // 只有当连接上数据库后才去启动服务器
     app.listen("5000", () => {
-      console.log("服务器启动成功, 请访问: http://localhost:5000");
+      console.log("Server started. Please visit: http://localhost:5000");
     });
   })
   .catch(error => {
-    console.error("连接数据库失败", error);
+    console.error("Database connect failed", error);
   });

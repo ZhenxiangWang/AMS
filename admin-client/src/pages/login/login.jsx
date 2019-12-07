@@ -14,7 +14,7 @@ const Item = Form.Item; // 不能写在import之前
  */
 class Login extends Component {
   handleSubmit = event => {
-    // 阻止事件的默认行为
+    // 阻止事件的默认行为: 组织表单的提交
     event.preventDefault();
 
     // 对所有表单字段进行检验
@@ -52,13 +52,13 @@ class Login extends Component {
   validatePwd = (rule, value, callback) => {
     console.log("validatePwd()", rule, value);
     if (!value) {
-      callback("密码必须输入");
+      callback("Please input your password!");
     } else if (value.length < 4) {
-      callback("密码长度不能小于4位");
+      callback("Password must be at least 4 characters.");
     } else if (value.length > 12) {
-      callback("密码长度不能大于12位");
+      callback("Password must be at most 12 characters.");
     } else if (!/^[a-zA-Z0-9_]+$/.test(value)) {
-      callback("密码必须是英文、数字或下划线组成");
+      callback("Password must contain only letters, numbers, or underscores.");
     } else {
       callback(); // 验证通过
     }
@@ -103,13 +103,20 @@ class Login extends Component {
                   {
                     required: true,
                     whitespace: true,
-                    message: "用户名必须输入"
+                    message: "Please input your username!"
                   },
-                  { min: 4, message: "用户名至少4位" },
-                  { max: 12, message: "用户名最多12位" },
+                  {
+                    min: 4,
+                    message: "User name must be at least 4 characters."
+                  },
+                  {
+                    max: 12,
+                    message: "User name must be at most 12 characters."
+                  },
                   {
                     pattern: /^[a-zA-Z0-9_]+$/,
-                    message: "用户名必须是英文、数字或下划线组成"
+                    message:
+                      "User name  must contain only letters, numbers, or underscores."
                   }
                 ],
                 initialValue: "admin" // 初始值
@@ -157,26 +164,30 @@ class Login extends Component {
 
 /*
 1. 高阶函数
-    1). 一类特别的函数
+    1). 一类特别的函数，有两种
         a. 接受函数类型的参数
         b. 返回值是函数
     2). 常见
-        a. 定时器: setTimeout()/setInterval()
-        b. Promise: Promise(() => {}) then(value => {}, reason => {})
-        c. 数组遍历相关的方法: forEach()/filter()/map()/reduce()/find()/findIndex()
-        d. 函数对象的bind()
-        e. Form.create()() / getFieldDecorator()()
-    3). 高阶函数更新动态, 更加具有扩展性
+        a. 定时器: setTimeout()/setInterval()，接受函数类型的参数
+        b. Promise: Promise(() => {}) then(value => {}, reason => {}) ，接受函数类型的参数
+        c. 数组遍历相关的方法: forEach()/filter()/map()/reduce()/find()/findIndex(),接受函数类型的参数
+        d. 函数对象的bind()，返回值是函数
+        e. Form.create()() / getFieldDecorator()()，返回值是函数
+        f. Form.create()返回一个函数，后面再加括号是调用这个函数。
+    3). 高阶函数更加动态, 更加具有扩展性
 
 2. 高阶组件
-    1). 本质就是一个函数
-    2). 接收一个组件(被包装组件), 返回一个新的组件(包装组件), 包装组件会向被包装组件传入特定属性
-    3). 作用: 扩展组件的功能
-    4). 高阶组件也是高阶函数: 接收一个组件函数, 返回是一个新的组件函数
+    1). 组件本质就是一个函数
+    2). 这个函数接收一个组件(被包装组件), 返回一个新的组件(包装组件), 包装组件会向被包装组件传入特定属性
+    3). 作用: 扩展组件的功能，实现更加强大，动态的功能
+    4). 高阶组件也是高阶函数: 接收一个组件(函数), 返回是一个新的组件(函数)
  */
 /*
+理解Form组件：包含<Form>的组件
 包装Form组件生成一个新的组件: Form(Login)
-新组件会向Form组件传递一个强大的对象属性: form
+新组件会向Form组件传递一个强大的对象属性: 属性名：form，属性值：对象
+此时Form是个对象，点的左边都是对象，括号的左边都是函数。
+Form.creat()返回的就是一个高阶组件。
  */
 const WrapLogin = Form.create()(Login);
 export default connect(state => ({ user: state.user }), { login })(WrapLogin);
