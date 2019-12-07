@@ -11,6 +11,8 @@ import ajax from "./ajax";
 
 // const BASE = 'http://localhost:5000'
 const BASE = "";
+//在client端的package.json文件里，配置代理服务器
+//"proxy": "http://localhost:5000"
 // 登陆
 /*
 export function reqLogin(username, password) {
