@@ -170,10 +170,11 @@ class Login extends Component {
     2). 常见
         a. 定时器: setTimeout()/setInterval()，接受函数类型的参数
         b. Promise: Promise(() => {}) then(value => {}, reason => {}) ，接受函数类型的参数
-        c. 数组遍历相关的方法: forEach()/filter()/map()/reduce()/find()/findIndex()
-        d. 函数对象的bind()
-        e. Form.create()() / getFieldDecorator()()
-    3). 高阶函数更新动态, 更加具有扩展性
+        c. 数组遍历相关的方法: forEach()/filter()/map()/reduce()/find()/findIndex(),接受函数类型的参数
+        d. 函数对象的bind()，返回值是函数
+        e. Form.create()() / getFieldDecorator()()，返回值是函数
+        f. Form.create()返回一个函数，后面再加括号是调用这个函数。
+    3). 高阶函数更加动态, 更加具有扩展性
 
 2. 高阶组件
     1). 组件本质就是一个函数
