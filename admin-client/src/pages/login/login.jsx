@@ -80,7 +80,7 @@ class Login extends Component {
       <div className="login">
         <header className="login-header">
           <img src={logo} alt="logo" />
-          <h1>Admin Management System</h1>
+          <h1>Admin System</h1>
         </header>
         <section className="login-content">
           <div className={user.errorMsg ? "error-msg show" : "error-msg"}>
