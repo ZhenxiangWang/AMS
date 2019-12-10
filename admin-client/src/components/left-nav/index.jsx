@@ -184,7 +184,7 @@ class LeftNav extends Component {
       <div className="left-nav">
         <Link to="/" className="left-nav-header">
           <img src={logo} alt="logo" />
-          <h1>Admin System</h1>
+          <h1>ADMIN SYSTEM</h1>
         </Link>
 
         <Menu

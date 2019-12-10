@@ -41,17 +41,17 @@ const menuList = [
     icon: "area-chart",
     children: [
       {
-        title: "BAR CHART",
+        title: "BAR",
         key: "/charts/bar",
         icon: "bar-chart"
       },
       {
-        title: "LINE CHART",
+        title: "LINE",
         key: "/charts/line",
         icon: "line-chart"
       },
       {
-        title: "PIE CHART",
+        title: "PIE",
         key: "/charts/pie",
         icon: "pie-chart"
       }
