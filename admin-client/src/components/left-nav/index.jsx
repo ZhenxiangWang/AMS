@@ -168,7 +168,7 @@ class LeftNav extends Component {
   }
 
   render() {
-    // debugger
+    // debugger;
     // 得到当前请求的路由路径
     let path = this.props.location.pathname;
     console.log("render()", path);
