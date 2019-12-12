@@ -17,9 +17,10 @@ class Header extends Component {
   state = {
     currentTime: formateDate(Date.now()), // 当前时间字符串
     dayPictureUrl: "", // 天气图片url
-    weather: "" // 天气的文本
+    temperature: "" // 气温
   };
 
+  //实现时间更新功能
   getTime = () => {
     // 每隔1s获取当前时间, 并更新状态数据currentTime
     this.intervalId = setInterval(() => {
@@ -30,13 +31,14 @@ class Header extends Component {
 
   getWeather = async () => {
     // 调用接口请求异步获取数据
-    const { dayPictureUrl, weather } = await reqWeather("北京");
+    const { dayPictureUrl, temperature } = await reqWeather("南阳");
     // 更新状态
-    this.setState({ dayPictureUrl, weather });
+    this.setState({ dayPictureUrl, temperature });
   };
 
   getTitle = () => {
     // 得到当前请求路径
+    //为了获得location，需要把这个组件变成路由组件，即用withRouter包装
     const path = this.props.location.pathname;
     let title;
     menuList.forEach(item => {
@@ -64,7 +66,8 @@ class Header extends Component {
   logout = () => {
     // 显示确认框
     Modal.confirm({
-      content: "确定退出吗?",
+      content: "Are you sure you want to logout?",
+      //箭头函数会用外部的this
       onOk: () => {
         console.log("OK", this);
         this.props.logout();
@@ -97,7 +100,7 @@ class Header extends Component {
   }
 
   render() {
-    const { currentTime, dayPictureUrl, weather } = this.state;
+    const { currentTime, dayPictureUrl, temperature } = this.state;
 
     const username = this.props.user.username;
 
@@ -115,7 +118,7 @@ class Header extends Component {
           <div className="header-bottom-right">
             <span>{currentTime}</span>
             <img src={dayPictureUrl} alt="weather" />
-            <span>{weather}</span>
+            <span>{temperature}</span>
           </div>
         </div>
       </div>

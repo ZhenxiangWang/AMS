@@ -117,8 +117,8 @@ export const reqWeather = city => {
       // 如果成功了
       if (!err && data.status === "success") {
         // 取出需要的数据
-        const { dayPictureUrl, weather } = data.results[0].weather_data[0];
-        resolve({ dayPictureUrl, weather });
+        const { dayPictureUrl, temperature } = data.results[0].weather_data[0];
+        resolve({ dayPictureUrl, temperature });
       } else {
         // 如果失败了
         message.error("Cannot get wheather information.");
