@@ -66,7 +66,8 @@ class Header extends Component {
   logout = () => {
     // 显示确认框
     Modal.confirm({
-      content: "确定退出吗?",
+      content: "Are you sure you want to logout?",
+      //箭头函数会用外部的this
       onOk: () => {
         console.log("OK", this);
         this.props.logout();
