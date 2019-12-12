@@ -110,7 +110,7 @@ export default class Category extends Component {
   显示指定一级分类列表
    */
   showCategorys = () => {
-    // 更新为显示一列表的状态
+    // 更新为显示一级列表的状态
     this.setState({
       parentId: "0",
       parentName: "",
@@ -247,7 +247,7 @@ export default class Category extends Component {
           <LinkButton onClick={this.showCategorys}>
             TOP LEVEL CATEGORIES
           </LinkButton>
-          <Icon type="arrow-right" style={{ marginRight: 5 }} />
+          <Icon type="arrow-right" style={{ marginRight: 10 }} />
           <span>{parentName}</span>
         </span>
       );

@@ -42,7 +42,7 @@ class AddForm extends Component {
           {getFieldDecorator("categoryName", {
             initialValue: "",
             rules: [{ required: true, message: "Category name is required" }]
-          })(<Input placeholder="Please input category name." />)}
+          })(<Input placeholder="Please input the category name." />)}
         </Item>
       </Form>
     );
