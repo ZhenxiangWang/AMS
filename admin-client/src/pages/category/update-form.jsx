@@ -1,49 +1,38 @@
-import React, {Component} from 'react'
-import PropTypes from 'prop-types'
-import {
-  Form,
-  Input
-} from 'antd'
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { Form, Input } from "antd";
 
-const Item = Form.Item
+const Item = Form.Item;
 
 /*
 更新分类的form组件
  */
 class UpdateForm extends Component {
-
   static propTypes = {
     categoryName: PropTypes.string.isRequired,
     setForm: PropTypes.func.isRequired
-  }
+  };
 
-  componentWillMount () {
+  componentWillMount() {
     // 将form对象通过setForm()传递父组件
-    this.props.setForm(this.props.form)
+    this.props.setForm(this.props.form);
   }
 
   render() {
-
-    const {categoryName} = this.props
-    const { getFieldDecorator } = this.props.form
+    const { categoryName } = this.props;
+    const { getFieldDecorator } = this.props.form;
 
     return (
       <Form>
         <Item>
-          {
-            getFieldDecorator('categoryName', {
-              initialValue: categoryName,
-              rules: [
-                {required: true, message: '分类名称必须输入'}
-              ]
-            })(
-              <Input placeholder='请输入分类名称'/>
-            )
-          }
+          {getFieldDecorator("categoryName", {
+            initialValue: categoryName,
+            rules: [{ required: true, message: "Category name is required." }]
+          })(<Input placeholder="Please input the category name." />)}
         </Item>
       </Form>
-    )
+    );
   }
 }
 
-export default Form.create()(UpdateForm)
+export default Form.create()(UpdateForm);
