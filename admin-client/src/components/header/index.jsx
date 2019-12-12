@@ -20,6 +20,7 @@ class Header extends Component {
     temperature: "" // 气温
   };
 
+  //实现时间更新功能
   getTime = () => {
     // 每隔1s获取当前时间, 并更新状态数据currentTime
     this.intervalId = setInterval(() => {
