@@ -17,7 +17,7 @@ class Header extends Component {
   state = {
     currentTime: formateDate(Date.now()), // 当前时间字符串
     dayPictureUrl: "", // 天气图片url
-    weather: "" // 天气的文本
+    temperature: "" // 气温
   };
 
   getTime = () => {
@@ -30,9 +30,9 @@ class Header extends Component {
 
   getWeather = async () => {
     // 调用接口请求异步获取数据
-    const { dayPictureUrl, weather } = await reqWeather("北京");
+    const { dayPictureUrl, temperature } = await reqWeather("南阳");
     // 更新状态
-    this.setState({ dayPictureUrl, weather });
+    this.setState({ dayPictureUrl, temperature });
   };
 
   getTitle = () => {
@@ -97,7 +97,7 @@ class Header extends Component {
   }
 
   render() {
-    const { currentTime, dayPictureUrl, weather } = this.state;
+    const { currentTime, dayPictureUrl, temperature } = this.state;
 
     const username = this.props.user.username;
 
@@ -115,7 +115,7 @@ class Header extends Component {
           <div className="header-bottom-right">
             <span>{currentTime}</span>
             <img src={dayPictureUrl} alt="weather" />
-            {/* <span>{weather}</span> */}
+            <span>{temperature}</span>
           </div>
         </div>
       </div>
