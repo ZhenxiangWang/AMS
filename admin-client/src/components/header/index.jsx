@@ -38,6 +38,7 @@ class Header extends Component {
 
   getTitle = () => {
     // 得到当前请求路径
+    //为了获得location，需要把这个组件变成路由组件，即用withRouter包装
     const path = this.props.location.pathname;
     let title;
     menuList.forEach(item => {
