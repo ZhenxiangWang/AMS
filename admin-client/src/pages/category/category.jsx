@@ -25,11 +25,11 @@ export default class Category extends Component {
   initColumns = () => {
     this.columns = [
       {
-        title: "Category Name",
+        title: "CATEGORY NAME",
         dataIndex: "name" // 显示数据对应的属性名
       },
       {
-        title: "Operations",
+        title: "OPERATIONS",
         width: 300,
         render: (
           category // 返回需要显示的界面标签
@@ -266,7 +266,7 @@ export default class Category extends Component {
           loading={loading}
           dataSource={parentId === "0" ? categorys : subCategorys}
           columns={this.columns}
-          pagination={{ defaultPageSize: 5, showQuickJumper: true }}
+          pagination={{ defaultPageSize: 8, showQuickJumper: true }}
         />
 
         <Modal
