@@ -80,13 +80,13 @@ class Login extends Component {
       <div className="login">
         <header className="login-header">
           <img src={logo} alt="logo" />
-          <h1>Admin Management System</h1>
+          <h1>ADMIN SYSTEM</h1>
         </header>
         <section className="login-content">
           <div className={user.errorMsg ? "error-msg show" : "error-msg"}>
             {user.errorMsg}
           </div>
-          <h2>User Login</h2>
+          <h2>LOGIN</h2>
           <Form onSubmit={this.handleSubmit} className="login-form">
             <Item>
               {/*
