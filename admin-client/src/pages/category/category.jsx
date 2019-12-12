@@ -87,12 +87,13 @@ export default class Category extends Component {
   显示指定一级分类对象的二子列表
    */
   showSubCategorys = category => {
-    // 更新状态
+    // 更新状态，是异步的
     this.setState(
       {
         parentId: category._id,
         parentName: category.name
       },
+      //所以需要用回调函数
       () => {
         // 在状态更新且重新render()后执行
         console.log("parentId", this.state.parentId); // '0'
