@@ -1,81 +1,76 @@
-import React from "react"
-import {
-  Chart,
-  Geom,
-  Axis,
-  Tooltip,
-} from "bizcharts"
+import React from "react";
+import { Chart, Geom, Axis, Tooltip } from "bizcharts";
 
 export default class Bar extends React.Component {
   render() {
     const data = [
       {
-        year: "1月",
+        year: "Jan",
         sales: 38
       },
       {
-        year: "2月",
+        year: "Feb",
         sales: 52
       },
       {
-        year: "3月",
+        year: "Mar",
         sales: 61
       },
       {
-        year: "4月",
+        year: "Apr",
         sales: 145
       },
       {
-        year: "5月",
+        year: "May",
         sales: 48
       },
       {
-        year: "6月",
+        year: "Jun",
         sales: 38
       },
       {
-        year: "7月",
+        year: "Jul",
         sales: 28
       },
       {
-        year: "8月",
+        year: "Aug",
         sales: 38
       },
       {
-        year: "59月",
+        year: "Sep",
         sales: 68
       },
       {
-        year: "10月",
+        year: "Ocr",
         sales: 38
       },
       {
-        year: "11月",
+        year: "Nov",
         sales: 58
       },
       {
-        year: "12月",
+        year: "Dec",
         sales: 38
       }
-    ]
+    ];
     const cols = {
       sales: {
         tickInterval: 20
       }
-    }
+    };
     return (
-      <div style={{width: '100%', marginLeft: -30}}>
+      <div style={{ width: "100%", marginLeft: -30 }}>
         <Chart height={338} data={data} scale={cols} forceFit>
-          <Axis name="year"/>
-          <Axis name="sales"/>
+          <Axis name="year" />
+          <Axis name="sales" />
           <Tooltip
             crosshairs={{
               type: "y"
             }}
           />
-          <Geom type="interval" position="year*sales"/>
+          <Geom type="interval" position="year*sales" />
         </Chart>
       </div>
-    )
+    );
   }
 }

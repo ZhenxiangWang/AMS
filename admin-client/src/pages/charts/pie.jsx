@@ -1,69 +1,73 @@
-import React, {Component} from 'react'
-import {Card} from 'antd'
-import ReactEcharts from 'echarts-for-react'
+import React, { Component } from "react";
+import { Card } from "antd";
+import ReactEcharts from "echarts-for-react";
 
 /*
 后台管理的饼图路由组件
  */
 export default class Pie extends Component {
-
   getOption = () => {
     return {
-      title : {
-        text: '某站点用户访问来源',
-        subtext: '纯属虚构',
-        x:'center'
+      title: {
+        text: "USER SOURCES",
+        subtext: "The data is purely fictitious",
+        x: "center"
       },
-      tooltip : {
-        trigger: 'item',
+      tooltip: {
+        trigger: "item",
         formatter: "{a} <br/>{b} : {c} ({d}%)"
       },
       legend: {
-        orient: 'vertical',
-        left: 'left',
-        data: ['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+        orient: "vertical",
+        left: "left",
+        data: [
+          "Direct Access",
+          "Email Marketing",
+          "Affiliate Advertising",
+          "Video Advertising",
+          "Search Engine"
+        ]
       },
-      series : [
+      series: [
         {
-          name: '访问来源',
-          type: 'pie',
-          radius : '55%',
-          center: ['50%', '60%'],
-          data:[
-            {value:335, name:'直接访问'},
-            {value:310, name:'邮件营销'},
-            {value:234, name:'联盟广告'},
-            {value:135, name:'视频广告'},
-            {value:1548, name:'搜索引擎'}
+          name: "USER SOURCES",
+          type: "pie",
+          radius: "55%",
+          center: ["50%", "60%"],
+          data: [
+            { value: 335, name: "Direct Access" },
+            { value: 310, name: "Email Marketing" },
+            { value: 234, name: "Affiliate Advertising" },
+            { value: 135, name: "Video Advertising" },
+            { value: 1548, name: "Search Engine" }
           ],
           itemStyle: {
             emphasis: {
               shadowBlur: 10,
               shadowOffsetX: 0,
-              shadowColor: 'rgba(0, 0, 0, 0.5)'
+              shadowColor: "rgba(0, 0, 0, 0.5)"
             }
           }
         }
       ]
     };
-
-  }
+  };
 
   getOption2 = () => {
     return {
-      backgroundColor: '#2c343c',
+      backgroundColor: "#2c343c",
 
       title: {
-        text: 'Customized Pie',
-        left: 'center',
+        text: "Customized Pie",
+        left: "center",
         top: 20,
         textStyle: {
-          color: '#ccc'
+          color: "#ccc"
         }
       },
 
-      tooltip : {
-        trigger: 'item',
+      tooltip: {
+        trigger: "item",
         formatter: "{a} <br/>{b} : {c} ({d}%)"
       },
 
@@ -75,31 +79,33 @@ export default class Pie extends Component {
           colorLightness: [0, 1]
         }
       },
-      series : [
+      series: [
         {
-          name:'访问来源',
-          type:'pie',
-          radius : '55%',
-          center: ['50%', '50%'],
-          data:[
-            {value:335, name:'直接访问'},
-            {value:310, name:'邮件营销'},
-            {value:274, name:'联盟广告'},
-            {value:235, name:'视频广告'},
-            {value:400, name:'搜索引擎'}
-          ].sort(function (a, b) { return a.value - b.value; }),
-          roseType: 'radius',
+          name: "USER SOURCES",
+          type: "pie",
+          radius: "55%",
+          center: ["50%", "50%"],
+          data: [
+            { value: 335, name: "Direct Access" },
+            { value: 310, name: "Email Marketing" },
+            { value: 274, name: "Affiliate Advertising" },
+            { value: 235, name: "Video Advertising" },
+            { value: 400, name: "Search Engine" }
+          ].sort(function(a, b) {
+            return a.value - b.value;
+          }),
+          roseType: "radius",
           label: {
             normal: {
               textStyle: {
-                color: 'rgba(255, 255, 255, 0.3)'
+                color: "rgba(255, 255, 255, 0.3)"
               }
             }
           },
           labelLine: {
             normal: {
               lineStyle: {
-                color: 'rgba(255, 255, 255, 0.3)'
+                color: "rgba(255, 255, 255, 0.3)"
               },
               smooth: 0.2,
               length: 10,
@@ -108,32 +114,32 @@ export default class Pie extends Component {
           },
           itemStyle: {
             normal: {
-              color: '#c23531',
+              color: "#c23531",
               shadowBlur: 200,
-              shadowColor: 'rgba(0, 0, 0, 0.5)'
+              shadowColor: "rgba(0, 0, 0, 0.5)"
             }
           },
 
-          animationType: 'scale',
-          animationEasing: 'elasticOut',
-          animationDelay: function (idx) {
+          animationType: "scale",
+          animationEasing: "elasticOut",
+          animationDelay: function(idx) {
             return Math.random() * 200;
           }
         }
       ]
     };
-  }
+  };
 
   render() {
     return (
       <div>
-        <Card title='饼图一'>
-          <ReactEcharts option={this.getOption()} style={{height: 300}}/>
+        <Card title="PIE CHART 1">
+          <ReactEcharts option={this.getOption()} style={{ height: 300 }} />
         </Card>
-        <Card title='饼图二'>
-          <ReactEcharts option={this.getOption2()} style={{height: 300}}/>
+        <Card title="PIE CHART 2">
+          <ReactEcharts option={this.getOption2()} style={{ height: 300 }} />
         </Card>
       </div>
-    )
+    );
   }
 }
