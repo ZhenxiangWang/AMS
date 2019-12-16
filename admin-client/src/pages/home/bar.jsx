@@ -13,43 +13,43 @@ export default class Bar extends React.Component {
         sales: 52
       },
       {
-        year: "3月",
+        year: "Mar",
         sales: 61
       },
       {
-        year: "4月",
+        year: "Apr",
         sales: 145
       },
       {
-        year: "5月",
+        year: "May",
         sales: 48
       },
       {
-        year: "6月",
+        year: "Jun",
         sales: 38
       },
       {
-        year: "7月",
+        year: "Jul",
         sales: 28
       },
       {
-        year: "8月",
+        year: "Aug",
         sales: 38
       },
       {
-        year: "59月",
+        year: "Sep",
         sales: 68
       },
       {
-        year: "10月",
+        year: "Ocr",
         sales: 38
       },
       {
-        year: "11月",
+        year: "Nov",
         sales: 58
       },
       {
-        year: "12月",
+        year: "Dec",
         sales: 38
       }
     ];
