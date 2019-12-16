@@ -26,11 +26,11 @@ class AddForm extends Component {
 
     return (
       <Form>
-        <Item label="角色名称" {...formItemLayout}>
+        <Item label="NAME" {...formItemLayout}>
           {getFieldDecorator("roleName", {
             initialValue: "",
-            rules: [{ required: true, message: "角色名称必须输入" }]
-          })(<Input placeholder="请输入角色名称" />)}
+            rules: [{ required: true, message: "Role name is required" }]
+          })(<Input placeholder="Please input role name" />)}
         </Item>
       </Form>
     );
