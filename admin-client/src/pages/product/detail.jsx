@@ -87,7 +87,7 @@ export default class ProductDetail extends Component {
           </Item>
           <Item>
             <span className="left">PRICE:</span>
-            <span>{price}元</span>
+            <span>${price}</span>
           </Item>
           <Item>
             <span className="left">CATEGORY:</span>
