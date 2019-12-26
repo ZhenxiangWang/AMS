@@ -16,7 +16,7 @@ export default class ProductHome extends Component {
     total: 0, // 商品的总数量
     products: [], // 商品的数组
     loading: false, // 是否正在加载中
-    searchName: "", // 搜索的关键字
+    searchName: "", // 搜索的关键字名称
     searchType: "productName" // 根据哪个字段搜索
   };
 
