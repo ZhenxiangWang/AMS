@@ -114,6 +114,7 @@ export default class ProductHome extends Component {
     const { searchName, searchType } = this.state;
     // 如果搜索关键字有值, 说明我们要做搜索分页
     let result;
+    // 两种search
     if (searchName) {
       result = await reqSearchProducts({
         pageNum,
