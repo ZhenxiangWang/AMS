@@ -1,9 +1,9 @@
 /*
-应用的启动模块
-1. 通过express启动服务器
-2. 通过mongoose连接数据库
-  说明: 只有当连接上数据库后才去启动服务器
-3. 使用中间件
+Application startup module
+1. Start the server through Express
+2. Connect to the database through Mongoose
+Note: start the server only after connecting to the database
+3. Use middleware
  */
 const mongoose = require("mongoose");
 const express = require("express");
