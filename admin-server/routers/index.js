@@ -1,5 +1,5 @@
 /*
-用来定义路由的路由器模块
+Router module used to define routes
  */
 const express = require("express");
 const md5 = require("blueimp-md5");
@@ -9,17 +9,17 @@ const CategoryModel = require("../models/CategoryModel");
 const ProductModel = require("../models/ProductModel");
 const RoleModel = require("../models/RoleModel");
 
-// 得到路由器对象
+// Get router object
 const router = express.Router();
 // console.log('router', router)
 
-// 指定需要过滤的属性
+// Specify attributes to be filtered
 const filter = { password: 0, __v: 0 };
 
-// 登陆
+// Login
 router.post("/login", (req, res) => {
   const { username, password } = req.body;
-  // 根据username和password查询数据库users, 如果没有, 返回提示错误的信息, 如果有, 返回登陆成功信息(包含user)
+  // Query database users according to username and password, if not, return error message, if yes, return login success message (including user)
   UserModel.findOne({ username, password: md5(password) })
     .then(user => {
       if (user) {

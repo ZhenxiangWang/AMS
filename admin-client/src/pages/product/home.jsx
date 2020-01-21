@@ -16,8 +16,8 @@ export default class ProductHome extends Component {
     total: 0, // 商品的总数量
     products: [], // 商品的数组
     loading: false, // 是否正在加载中
-    searchName: "", // 搜索的关键字
-    searchType: "productName" // 根据哪个字段搜索
+    searchName: "", // 搜索的关键字名称
+    searchType: "productName" // 根据哪个字段搜索，默认按名称搜
   };
 
   /*
@@ -114,6 +114,7 @@ export default class ProductHome extends Component {
     const { searchName, searchType } = this.state;
     // 如果搜索关键字有值, 说明我们要做搜索分页
     let result;
+    // 两种search
     if (searchName) {
       result = await reqSearchProducts({
         pageNum,
