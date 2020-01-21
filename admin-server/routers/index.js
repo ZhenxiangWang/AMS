@@ -19,7 +19,7 @@ const filter = { password: 0, __v: 0 };
 // Login
 router.post("/login", (req, res) => {
   const { username, password } = req.body;
-  // 根据username和password查询数据库users, 如果没有, 返回提示错误的信息, 如果有, 返回登陆成功信息(包含user)
+  // Query database users according to username and password, if not, return error message, if yes, return login success message (including user)
   UserModel.findOne({ username, password: md5(password) })
     .then(user => {
       if (user) {
