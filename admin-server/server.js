@@ -38,12 +38,12 @@ const fs = require("fs");
   })
 })*/
 
-// 通过mongoose连接数据库
+// Connect to the database through Mongoose
 mongoose
   .connect("mongodb://localhost/server_db2", { useNewUrlParser: true })
   .then(() => {
     console.log("Database connect success!");
-    // 只有当连接上数据库后才去启动服务器
+    // Start the server only after connecting to the database
     app.listen("5000", () => {
       console.log("Server started. Please visit: http://localhost:5000");
     });
