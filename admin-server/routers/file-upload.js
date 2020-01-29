@@ -10,7 +10,7 @@ const dirPath = path.join(__dirname, "..", "public/upload");
 const storage = multer.diskStorage({
   // destination: 'upload', //when string, service startup will automatically create folders
   destination: function(req, file, cb) {
-    //函数需手动创建文件夹
+    //Function needs to create folder manually
     // console.log('destination()', file)
     if (!fs.existsSync(dirPath)) {
       fs.mkdir(dirPath, function(err) {
@@ -34,14 +34,14 @@ const upload = multer({ storage });
 const uploadSingle = upload.single("image");
 
 module.exports = function fileUpload(router) {
-  // 上传图片
+  // upload image
   router.post("/manage/img/upload", (req, res) => {
     uploadSingle(req, res, function(err) {
-      //错误处理
+      //Error handling
       if (err) {
         return res.send({
           status: 1,
-          msg: "上传文件失败"
+          msg: "File upload failed"
         });
       }
       var file = req.file;
