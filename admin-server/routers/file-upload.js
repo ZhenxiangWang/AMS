@@ -55,7 +55,7 @@ module.exports = function fileUpload(router) {
     });
   });
 
-  // 删除图片
+  // delete image
   router.post("/manage/img/delete", (req, res) => {
     const { name } = req.body;
     fs.unlink(path.join(dirPath, name), err => {
@@ -63,7 +63,7 @@ module.exports = function fileUpload(router) {
         console.log(err);
         res.send({
           status: 1,
-          msg: "删除文件失败"
+          msg: "Delete image filed"
         });
       } else {
         res.send({
