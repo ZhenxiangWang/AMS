@@ -23,7 +23,7 @@ router.post("/login", (req, res) => {
   UserModel.findOne({ username, password: md5(password) })
     .then(user => {
       if (user) {
-        // 登陆成功
+        // Login successfully
         // 生成一个cookie(userid: user._id), 并交给浏览器保存
         res.cookie("userid", user._id, { maxAge: 1000 * 60 * 60 * 24 });
         if (user.role_id) {
