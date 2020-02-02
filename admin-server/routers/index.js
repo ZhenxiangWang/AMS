@@ -24,7 +24,7 @@ router.post("/login", (req, res) => {
     .then(user => {
       if (user) {
         // Login successfully
-        // 生成一个cookie(userid: user._id), 并交给浏览器保存
+        // generate a cookie(userid: user._id), and give it to the browser to save
         res.cookie("userid", user._id, { maxAge: 1000 * 60 * 60 * 24 });
         if (user.role_id) {
           RoleModel.findOne({ _id: user.role_id }).then(role => {
