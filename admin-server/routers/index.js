@@ -34,11 +34,11 @@ router.post("/login", (req, res) => {
           });
         } else {
           user._doc.role = { menus: [] };
-          // 返回登陆成功信息(包含user)
+          // Return login success information (including users)
           res.send({ status: 0, data: user });
         }
       } else {
-        // 登陆失败
+        // Login failed
         res.send({ status: 1, msg: "Username or password incorrect!" });
       }
     })
