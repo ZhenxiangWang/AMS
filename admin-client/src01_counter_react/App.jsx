@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 export default class App extends Component {
 
   state = {
-    count: 0
+    count: 1
   }
 
   constructor(props) {
@@ -13,6 +13,7 @@ export default class App extends Component {
   }
 
   increment = () => {
+    console.log("test");
     const number = this.numberRef.current.value * 1
     this.setState(state => ({count: state.count + number}))
   }
@@ -24,7 +25,7 @@ export default class App extends Component {
 
   incrementIfOdd = () => {
     const number = this.numberRef.current.value * 1
-    if (this.state.count % 2 === 1) {
+    if (this.state.count % 3 === 1) {
       this.setState(state => ({count: state.count + number}))
     }
 
@@ -38,8 +39,6 @@ export default class App extends Component {
   }
 
   render() {
-    const count = this.state.count
-
     return (
       <div>
         <p>click {count} times</p>
